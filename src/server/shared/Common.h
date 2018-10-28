@@ -50,7 +50,6 @@
 
 #include <boost/optional.hpp>
 #include <boost/utility/in_place_factory.hpp>
-#include "Debugging/Errors.h"
 
 #if PLATFORM == PLATFORM_WINDOWS
 #  include <ws2tcpip.h>
