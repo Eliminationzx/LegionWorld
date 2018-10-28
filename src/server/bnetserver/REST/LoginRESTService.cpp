@@ -18,6 +18,7 @@
 #include "LoginRESTService.h"
 #include "Configuration/Config.h"
 #include "DatabaseEnv.h"
+#include "Errors.h"
 #include "JSON/ProtobufJSON.h"
 #include "Realm.h"
 #include "SessionManager.h"

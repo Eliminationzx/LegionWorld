@@ -19,6 +19,7 @@
 #include "BattlenetRpcErrorCodes.h"
 #include "ByteConverter.h"
 #include "Database/DatabaseEnv.h"
+#include "Errors.h"
 #include "LoginRESTService.h"
 #include "JSON/ProtobufJSON.h"
 #include "RealmList.h"
