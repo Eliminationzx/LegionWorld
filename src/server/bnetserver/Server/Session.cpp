@@ -18,7 +18,6 @@
 #include "Session.h"
 #include "BattlenetRpcErrorCodes.h"
 #include "ByteConverter.h"
-#include "Common.h"
 #include "Database/DatabaseEnv.h"
 #include "LoginRESTService.h"
 #include "JSON/ProtobufJSON.h"
