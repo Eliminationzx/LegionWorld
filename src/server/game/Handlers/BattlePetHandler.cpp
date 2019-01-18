@@ -244,7 +244,7 @@ void WorldSession::HandlePetBattleRequestWild(WorldPackets::BattlePet::RequestWi
         wildBattlePets[i] = nullptr;
     }
 
-    Creature* l_WildBattlePet = sWildBattlePetMgr->GetWildBattlePet(wildBattlePet);
+    auto l_WildBattlePet = sWildBattlePetMgr->GetWildBattlePet(wildBattlePet);
     if (!l_WildBattlePet)
     {
         l_WildBattlePet = nullptr;
