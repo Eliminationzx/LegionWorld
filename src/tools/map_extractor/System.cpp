@@ -39,7 +39,7 @@
 #include "adt.h"
 #include "wdt.h"
 
-namespace
+/*namespace
 {
     const char* HumanReadableCASCError(int error)
     {
@@ -64,7 +64,7 @@ namespace
         }
     }
 }
-
+*/
 // HANDLE CascStorage = NULL;
 
 typedef struct
