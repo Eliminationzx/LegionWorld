@@ -20,7 +20,6 @@ bin/
 *.rule
 *.bin
 *.log
-*.c
 *.check_cache
 *.stamp.*
 *.stamp

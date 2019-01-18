@@ -28,11 +28,6 @@ file(GLOB_RECURSE sources_Metric Metric/*.cpp Metric/*.h)
 
 file(GLOB sources_localdir *.cpp *.h)
 
-# Manually set sources for Debugging directory as we don't want to include WheatyExceptionReport in shared project
-# It needs to be included both in authserver and worldserver for the static global variable to be properly initialized
-# and to handle crash logs on windows
-set(sources_Debugging Debugging/Errors.cpp Debugging/Errors.h)
-
 #
 # Build shared sourcelist
 #
@@ -58,6 +53,8 @@ set(shared_STAT_SRCS
   ${sources_JSON}
   ${sources_Metric}
   ${sources_localdir}
+  Debugging/Errors.cpp
+  Debugging/Errors.h
 )
 
 include_directories(
