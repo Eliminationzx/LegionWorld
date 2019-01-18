@@ -26,6 +26,7 @@
 #include "ScriptUtils.h"
 #include "SpellAuraEffects.h"
 #include "PathGenerator.h"
+#include "GridNotifiers.h"
 
 //Arms Execute - 163201
 class spell_warr_execute : public SpellScriptLoader
