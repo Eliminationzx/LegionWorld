@@ -211,7 +211,7 @@ void WorldSession::HandlePetBattleRequestWild(WorldPackets::BattlePet::RequestWi
         return;
     }
 
-    Creature* wildBattlePetCreature = _player->GetNPCIfCanInteractWith(battleRequest->OpponentGuid, UNIT_NPC_FLAG_WILD_BATTLE_PET);
+    auto wildBattlePetCreature = _player->GetNPCIfCanInteractWith(battleRequest->OpponentGuid, UNIT_NPC_FLAG_WILD_BATTLE_PET);
     if (!wildBattlePetCreature)
     {
         SendPetBattleRequestFailed(PETBATTLE_REQUEST_TARGET_NOT_CAPTURABLE);
@@ -219,7 +219,7 @@ void WorldSession::HandlePetBattleRequestWild(WorldPackets::BattlePet::RequestWi
         return;
     }
 
-    Creature* wildBattlePet = sObjectAccessor->GetCreature(*_player, battleRequest->OpponentGuid);
+    auto wildBattlePet = sObjectAccessor->GetCreature(*_player, battleRequest->OpponentGuid);
     if (!wildBattlePet)
     {
         SendPetBattleRequestFailed(PETBATTLE_REQUEST_TARGET_NOT_CAPTURABLE);
@@ -320,7 +320,7 @@ void WorldSession::HandlePetBattleRequestWild(WorldPackets::BattlePet::RequestWi
         {
             battle->AddPet(PETBATTLE_TEAM_2, wildBattlePets[i]);
 
-            if (Creature* currrentCreature = sObjectAccessor->GetCreature(*_player, wildBattlePets[i]->OriginalCreature))
+            if (auto currrentCreature = sObjectAccessor->GetCreature(*_player, wildBattlePets[i]->OriginalCreature))
             {
                 currrentCreature->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_PACIFIED | UNIT_FLAG_IMMUNE_TO_PC); // Immuned to all
                 currrentCreature->SetTarget(_player->GetGUID());
