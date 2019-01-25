@@ -1969,7 +1969,7 @@ class spell_arcane_overload : public SpellScriptLoader
             {
                 Creature* arcaneOverload = GetCaster()->ToCreature();
                 targets.remove_if(ExactDistanceCheck(arcaneOverload,
-                    GetSpellInfo()->Effects[EFFECT_0]->CalcRadius(arcaneOverload) * arcaneOverload->GetFloatValue(OBJECT_FIELD_SCALE)));
+                    GetSpellInfo()->Effects[EFFECT_0]->CalcRadius(arcaneOverload, false) * arcaneOverload->GetFloatValue(OBJECT_FIELD_SCALE)));
             }
 
             void Register()

@@ -73,11 +73,8 @@ namespace sf {
             template<typename some_type> friend struct xlocked_safe_ptr;
             template<typename some_type> friend struct slocked_safe_ptr;
             template<typename, typename, size_t, size_t> friend class lock_timed_transaction;
-#if (_WIN32 && _MSC_VER > 1900 || __clang__)
-			template<class mutex_type> friend class std::lock_guard;  // MSVS2013 or Clang 4.0
-#else
+
 			template<class... mutex_types> friend class std::lock_guard;  // C++17 or MSVS2015
-#endif
 
 #ifdef SHARED_MTX    
             template<typename mutex_type> friend class std::shared_lock;  // C++14
