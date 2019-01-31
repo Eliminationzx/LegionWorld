@@ -8,7 +8,7 @@
 #include "CreatureTextMgr.h"
 #include "GameObjectAI.h"
 #include "QuestData.h"
-#include <ObjectVisitors.hpp>
+#include "ObjectVisitors.hpp"
 
 // + Smart: 122105 120515 118444 119130
 // 119133, 118412, 121232, 118966, 121146, 118969, 118945

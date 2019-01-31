@@ -39,7 +39,7 @@
 #include "adt.h"
 #include "wdt.h"
 
-namespace
+/*namespace
 {
     const char* HumanReadableCASCError(int error)
     {
@@ -63,7 +63,7 @@ namespace
             default: return "UNKNOWN";
         }
     }
-}
+}*/
 
 // HANDLE CascStorage = NULL;
 

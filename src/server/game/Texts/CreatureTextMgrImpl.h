@@ -25,7 +25,7 @@
 #include "Group.h"
 #include "World.h"
 #include "WorldSession.h"
-#include <ObjectVisitors.hpp>
+#include "ObjectVisitors.hpp"
 
 template<class Builder>
 class CreatureTextLocalizer

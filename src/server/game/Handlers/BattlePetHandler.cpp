@@ -20,7 +20,8 @@
 #include "WildBattlePet.h"
 #include "CharacterData.h"
 #include "GridNotifiers.h"
-#include <ObjectVisitors.hpp>
+#include "GridNotifiersImpl.h"
+#include "ObjectVisitors.hpp"
 #include "PlayerDefines.h"
 #include "CellImpl.h"
 #include "PetBattleSystem.h"

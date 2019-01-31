@@ -22,7 +22,7 @@
 #include "ObjectMgr.h"
 #include "DatabaseEnv.h"
 #include "GridNotifiers.h"
-#include <ObjectVisitors.hpp>
+#include "ObjectVisitors.hpp"
 #include "AccountMgr.h"
 #include "CellImpl.h" 
 #include "GridNotifiersImpl.h"
