@@ -56,7 +56,6 @@ target_link_libraries(mmaps_generator
   Recast
   Detour
   cppformat
-  shared
   ${BZIP2_LIBRARIES}
   ${ZLIB_LIBRARIES}
   ${MYSQL_LIBRARY}
