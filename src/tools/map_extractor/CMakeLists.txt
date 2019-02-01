@@ -12,10 +12,9 @@
 file(GLOB_RECURSE sources *.cpp *.h)
 
 include_directories (
-  ${CMAKE_SOURCE_DIR}/src/server/shared
   ${CMAKE_SOURCE_DIR}/dep/CascLib/src
   ${CMAKE_SOURCE_DIR}/dep/cppformat
-  ${CMAKE_SOURCE_DIR}/dep/g3dlite/include
+  ${CMAKE_SOURCE_DIR}/src/server/shared
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/loadlib
 )
@@ -28,8 +27,6 @@ add_executable(mapextractor
 
 target_link_libraries(mapextractor
   casc
-  format
-  g3dlib
   cppformat
   ${BZIP2_LIBRARIES}
   ${ZLIB_LIBRARIES}

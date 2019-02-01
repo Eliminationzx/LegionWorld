@@ -12,9 +12,7 @@ file(GLOB_RECURSE mmap_gen_sources *.cpp *.h)
 
 set(mmap_gen_Includes
   ${CMAKE_BINARY_DIR}
-  ${CMAKE_SOURCE_DIR}/dep/zmqpp
   ${CMAKE_SOURCE_DIR}/dep/cppformat
-  ${CMAKE_SOURCE_DIR}/dep/libmpq
   ${CMAKE_SOURCE_DIR}/dep/zlib
   ${CMAKE_SOURCE_DIR}/dep/bzip2
   ${CMAKE_SOURCE_DIR}/dep/g3dlite/include
@@ -46,15 +44,7 @@ set(mmap_gen_Includes
   ${MYSQL_INCLUDE_DIR}
   ${OPENSSL_INCLUDE_DIR}
   ${VALGRIND_INCLUDE_DIR}
-  ${ZMQ_INCLUDE_DIR}
 )
-
-if( WIN32 )
-  set(mmap_gen_Includes
-    ${mmap_gen_Includes}
-    ${CMAKE_SOURCE_DIR}/dep/libmpq/win
-    )
-endif()
 
 include_directories(${mmap_gen_Includes})
 
@@ -65,8 +55,10 @@ target_link_libraries(mmaps_generator
   g3dlib
   Recast
   Detour
-  format
+  cppformat
   shared
+  ${BZIP2_LIBRARIES}
+  ${ZLIB_LIBRARIES}
   ${MYSQL_LIBRARY}
   ${OPENSSL_LIBRARIES}
   ${CMAKE_THREAD_LIBS_INIT}
