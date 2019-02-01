@@ -17,6 +17,7 @@
 
 #include "SslContext.h"
 #include "Log.h"
+#include "Config.h"
 
 bool Battlenet::SslContext::Initialize()
 {
@@ -25,13 +26,16 @@ bool Battlenet::SslContext::Initialize()
 #define LOAD_CHECK(fn) do { fn; \
     if (err) \
     { \
-        sLog->outError(LOG_FILTER_GENERAL, #fn " failed: %s", err.message().c_str()); \
+        sLog->outError(LOG_FILTER_GENERAL,"server.ssl", #fn " failed: %s", err.message().c_str()); \
         return false; \
     } } while (0)
 
+    std::string certificateChainFile = sConfigMgr->GetStringDefault("CertificatesFile", "./bnetserver.cert.pem");
+    std::string privateKeyFile = sConfigMgr->GetStringDefault("PrivateKeyFile", "./bnetserver.key.pem");
+
     LOAD_CHECK(instance().set_options(boost::asio::ssl::context::no_sslv3, err));
-    LOAD_CHECK(instance().use_certificate_chain_file("bnetserver.cert.pem", err));
-    LOAD_CHECK(instance().use_private_key_file("bnetserver.key.pem", boost::asio::ssl::context::pem, err));
+    LOAD_CHECK(instance().use_certificate_chain_file(certificateChainFile, err));
+    LOAD_CHECK(instance().use_private_key_file(privateKeyFile, boost::asio::ssl::context::pem, err));
 
 #undef LOAD_CHECK
 
