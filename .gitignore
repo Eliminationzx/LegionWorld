@@ -55,7 +55,6 @@ revision.h
 ipch/
 obj/
 [Bb]in
-[Dd]ebug*/
 [Rr]elease*/
 Ankh.NoLoad
 cmake-build-debug/
